@@ -1,221 +1,224 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snake Game - Play Online</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
 
+      .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 10px;
+        font-size: 2.5em;
+      }
+
+      .subtitle {
+        color: #666;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+      }
+
+      .game-wrapper {
+        background: #000;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 450px;
+      }
+
+      #applet-container {
+        width: 400px;
+        height: 400px;
+      }
+
+      .instructions {
+        background: #f0f0f0;
+        border-left: 4px solid #667eea;
+        padding: 15px;
+        text-align: left;
+        margin: 20px 0;
+        border-radius: 5px;
+        font-size: 0.95em;
+      }
+
+      .instructions h3 {
+        color: #667eea;
+        margin-bottom: 10px;
+      }
+
+      .instructions p {
+        color: #555;
+        margin: 8px 0;
+      }
+
+      .controls {
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 15px 0;
+      }
+
+      .controls h4 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .key-display {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+
+      .key {
+        background: #667eea;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 0.9em;
+      }
+
+      .loading {
+        color: #667eea;
+        font-weight: bold;
+        padding: 20px;
+        display: none;
+      }
+
+      .error {
+        background: #fee;
+        color: #c33;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 20px 0;
+        display: none;
+        border-left: 4px solid #c33;
+      }
+
+      footer {
+        margin-top: 30px;
+        color: #666;
+        font-size: 0.9em;
+      }
+
+      footer a {
+        color: #667eea;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 500px) {
         .container {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
+          padding: 20px;
         }
 
         h1 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 2.5em;
-        }
-
-        .subtitle {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        .game-wrapper {
-            background: #000;
-            border-radius: 10px;
-            padding: 10px;
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 450px;
+          font-size: 2em;
         }
 
         #applet-container {
-            width: 400px;
-            height: 400px;
+          width: 300px;
+          height: 300px;
         }
 
-        .instructions {
-            background: #f0f0f0;
-            border-left: 4px solid #667eea;
-            padding: 15px;
-            text-align: left;
-            margin: 20px 0;
-            border-radius: 5px;
-            font-size: 0.95em;
+        .game-wrapper {
+          min-height: 350px;
         }
-
-        .instructions h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        .instructions p {
-            color: #555;
-            margin: 8px 0;
-        }
-
-        .controls {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 15px 0;
-        }
-
-        .controls h4 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .key-display {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-
-        .key {
-            background: #667eea;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 0.9em;
-        }
-
-        .loading {
-            color: #667eea;
-            font-weight: bold;
-            padding: 20px;
-            display: none;
-        }
-
-        .error {
-            background: #fee;
-            color: #c33;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-            display: none;
-            border-left: 4px solid #c33;
-        }
-
-        footer {
-            margin-top: 30px;
-            color: #666;
-            font-size: 0.9em;
-        }
-
-        footer a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 500px) {
-            .container {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            #applet-container {
-                width: 300px;
-                height: 300px;
-            }
-
-            .game-wrapper {
-                min-height: 350px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>🐍 Snake Game</h1>
-        <p class="subtitle">Play the classic Snake game in your browser!</p>
+      <h1>🐍 Snake Game</h1>
+      <p class="subtitle">Play the classic Snake game in your browser!</p>
 
-        <div id="loading" class="loading">Loading game... Please wait.</div>
-        <div id="error" class="error"></div>
+      <div id="loading" class="loading">Loading game... Please wait.</div>
+      <div id="error" class="error"></div>
 
-        <div class="game-wrapper">
-            <div id="applet-container"></div>
+      <div class="game-wrapper">
+        <div id="applet-container"></div>
+      </div>
+
+      <div class="instructions">
+        <h3>How to Play</h3>
+        <p>✓ Use arrow keys to control the snake</p>
+        <p>✓ Eat the apple to grow longer and increase your score</p>
+        <p>✓ Avoid hitting the walls or yourself</p>
+        <p>✓ Try to beat your high score!</p>
+      </div>
+
+      <div class="controls">
+        <h4>🎮 Controls</h4>
+        <div class="key-display">
+          <div class="key">⬆ UP</div>
+          <div class="key">⬇ DOWN</div>
+          <div class="key">⬅ LEFT</div>
+          <div class="key">➡ RIGHT</div>
         </div>
+      </div>
 
-        <div class="instructions">
-            <h3>How to Play</h3>
-            <p>✓ Use arrow keys to control the snake</p>
-            <p>✓ Eat the apple to grow longer and increase your score</p>
-            <p>✓ Avoid hitting the walls or yourself</p>
-            <p>✓ Try to beat your high score!</p>
-        </div>
-
-        <div class="controls">
-            <h4>🎮 Controls</h4>
-            <div class="key-display">
-                <div class="key">⬆ UP</div>
-                <div class="key">⬇ DOWN</div>
-                <div class="key">⬅ LEFT</div>
-                <div class="key">➡ RIGHT</div>
-            </div>
-        </div>
-
-        <footer>
-            <p>Built with Java & CheerpJ | <a href="https://github.com" target="_blank">View on GitHub</a></p>
-        </footer>
+      <footer>
+        <p>
+          Built with Java & CheerpJ |
+          <a href="https://github.com" target="_blank">View on GitHub</a>
+        </p>
+      </footer>
     </div>
 
     <!-- CheerpJ 3.0 Library -->
     <script src="https://cjrtnc.leaningtech.com/3.0/cjvm.js"></script>
     <script>
-        // Initialize loading state
-        document.getElementById('loading').style.display = 'block';
+      // Initialize loading state
+      document.getElementById("loading").style.display = "block";
 
-        // Load and run the JAR file
-        cheerpjInit().then(async () => {
-            try {
-                // Run the Java application
-                await cheerpjRunJar("SnakeGame.jar");
-                document.getElementById('loading').style.display = 'none';
-            } catch (error) {
-                console.error('Error loading game:', error);
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('error').style.display = 'block';
-                document.getElementById('error').innerHTML = `
+      // Load and run the JAR file
+      cheerpjInit().then(async () => {
+        try {
+          // Run the Java application
+          await cheerpjRunJar("SnakeGame.jar");
+          document.getElementById("loading").style.display = "none";
+        } catch (error) {
+          console.error("Error loading game:", error);
+          document.getElementById("loading").style.display = "none";
+          document.getElementById("error").style.display = "block";
+          document.getElementById("error").innerHTML = `
                     ⚠️ Error loading game: ${error.message}<br>
                     Make sure SnakeGame.jar is in the same directory as this HTML file.
                 `;
-            }
-        });
+        }
+      });
     </script>
-</body>
+  </body>
 </html>

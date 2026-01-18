@@ -32,25 +32,25 @@ docs/
 
 ## 🎮 How to Play
 
-| Control | Action |
-|---------|--------|
-| ⬆️ UP Arrow | Move Up |
-| ⬇️ DOWN Arrow | Move Down |
-| ⬅️ LEFT Arrow | Move Left |
+| Control        | Action     |
+| -------------- | ---------- |
+| ⬆️ UP Arrow    | Move Up    |
+| ⬇️ DOWN Arrow  | Move Down  |
+| ⬅️ LEFT Arrow  | Move Left  |
 | ➡️ RIGHT Arrow | Move Right |
 
 **Objective**: Eat apples 🍎 to grow longer and achieve the highest score!
 
 ## 💻 Technical Stack
 
-| Component | Technology |
-|-----------|-----------|
-| Game Logic | Java 8+ |
+| Component   | Technology            |
+| ----------- | --------------------- |
+| Game Logic  | Java 8+               |
 | Compilation | Java Compiler (javac) |
-| Packaging | JAR (Java Archive) |
-| Web Runtime | CheerpJ 3.0 |
-| Frontend | HTML5 + CSS3 |
-| Hosting | GitHub Pages (Free) |
+| Packaging   | JAR (Java Archive)    |
+| Web Runtime | CheerpJ 3.0           |
+| Frontend    | HTML5 + CSS3          |
+| Hosting     | GitHub Pages (Free)   |
 
 ## 📚 Project Structure
 
@@ -82,6 +82,7 @@ Snake Game/
 ## 🛠️ Build Instructions
 
 ### Prerequisites
+
 - Java Development Kit (JDK 8+)
 - PowerShell or Command Prompt
 
@@ -103,25 +104,27 @@ cp build/SnakeGame.jar docs/SnakeGame.jar
 ## ▶️ Running Locally
 
 ### Desktop Version
+
 ```powershell
 java -cp build/SnakeGame.jar App
 ```
 
 ### Browser Version
+
 1. Open `docs/index.html` in any web browser
 2. Game will load via CheerpJ
 3. Start playing!
 
 ## 🌐 Why CheerpJ for Deployment?
 
-| Feature | Benefit |
-|---------|--------|
+| Feature              | Benefit                             |
+| -------------------- | ----------------------------------- |
 | **No Server Needed** | Static file hosting on GitHub Pages |
-| **Fast Loading** | JAR runs directly in browser |
-| **Cross-Platform** | Works on Windows, Mac, Linux |
-| **Free Forever** | GitHub Pages costs nothing |
-| **Permanent URL** | Your game stays accessible |
-| **Portfolio Ready** | Shows modern deployment skills |
+| **Fast Loading**     | JAR runs directly in browser        |
+| **Cross-Platform**   | Works on Windows, Mac, Linux        |
+| **Free Forever**     | GitHub Pages costs nothing          |
+| **Permanent URL**    | Your game stays accessible          |
+| **Portfolio Ready**  | Shows modern deployment skills      |
 
 ## 📋 Deployment Checklist
 
@@ -136,6 +139,7 @@ java -cp build/SnakeGame.jar App
 ## 🎓 Portfolio Value
 
 This project demonstrates:
+
 - ✓ Object-Oriented Java Design
 - ✓ Game Development (Logic, Collision Detection)
 - ✓ GUI Programming (Swing Framework)
@@ -156,12 +160,12 @@ This project demonstrates:
 
 ## 🐛 Troubleshooting
 
-| Issue | Solution |
-|-------|----------|
-| Game won't load | Check browser console (F12), ensure JAR exists in docs/ |
-| Keys not working | Click game area first, ensure focus |
-| Slow performance | This is expected for web Java, normal behavior |
-| Build fails | Ensure JDK is installed and in PATH |
+| Issue            | Solution                                                |
+| ---------------- | ------------------------------------------------------- |
+| Game won't load  | Check browser console (F12), ensure JAR exists in docs/ |
+| Keys not working | Click game area first, ensure focus                     |
+| Slow performance | This is expected for web Java, normal behavior          |
+| Build fails      | Ensure JDK is installed and in PATH                     |
 
 ## 📖 Next Steps
 
@@ -182,6 +186,7 @@ This project demonstrates:
 ## 📞 Support
 
 For detailed guides, see:
+
 - 📄 [GITHUB_SETUP.md](GITHUB_SETUP.md) - Step-by-step GitHub Pages setup
 - 📄 [DEPLOYMENT.md](DEPLOYMENT.md) - Technical deployment details
 
@@ -194,28 +199,30 @@ This project is open source. Feel free to fork, modify, and share!
 **Status**: ✅ Ready for Deployment
 
 ## Technologies
+
 This project was made with the following core libraries:
+
 - java.awt
-    Provides classes for graphics, colors, fonts, and GUI elements.Used for rendering the game graphics and handling dimensions, fonts, and colors.
-        1.Color
-        2.Dimension
-        3.Font
-        4.FontMetrics
-        5.Graphics
-        6.Image
-        7.Toolkit
+  Provides classes for graphics, colors, fonts, and GUI elements.Used for rendering the game graphics and handling dimensions, fonts, and colors.
+  1.Color
+  2.Dimension
+  3.Font
+  4.FontMetrics
+  5.Graphics
+  6.Image
+  7.Toolkit
 - javax.swing
-    Provides classes for building GUI applications in Java.Used for creating the game window and components.
-        1.JFrame
-        2.JPanel
-        3.Timer
-        4.ImageIcon
+  Provides classes for building GUI applications in Java.Used for creating the game window and components.
+  1.JFrame
+  2.JPanel
+  3.Timer
+  4.ImageIcon
 - java.awt.event
-    Provides classes for handling events like key presses and timer actions.Used for game controls and timer-based movement.
-        1.ActionEvent
-        2.ActionListener
-        3.KeyAdapter
-        4.KeyEvent
+  Provides classes for handling events like key presses and timer actions.Used for game controls and timer-based movement.
+  1.ActionEvent
+  2.ActionListener
+  3.KeyAdapter
+  4.KeyEvent
 
 ## Folder Structure
 
@@ -226,11 +233,8 @@ The workspace contains two folders by default, where:
 
 Meanwhile, the compiled output files will be generated in the `bin` folder by default.
 
-
-
 ![Start game](public/start-game.png)
 
 ![preview game](public/middle-game.png)
 
 ![Game Over](public/game-over.png)
-

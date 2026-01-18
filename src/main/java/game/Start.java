@@ -2,7 +2,7 @@ package game;
 
 import javax.swing.JFrame;
 
-public class Start extends JFrame{
+public class Start extends JFrame {
 
     public Start() {
         initUI();
