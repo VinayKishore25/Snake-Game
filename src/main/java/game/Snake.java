@@ -20,8 +20,8 @@ public class Snake {
     private void initSnake() {
         dots = 3;
         for (int z = 0; z < dots; z++) {
-            x[z] = 50 - z * DOT_SIZE;
-            y[z] = 50;
+            x[z] = 200 - z * DOT_SIZE;
+            y[z] = 200;
         }
     }
 
@@ -43,8 +43,8 @@ public class Snake {
     }
 
     public boolean checkCollision(int boardWidth, int boardHeight) {
-        for (int z = dots - 1; z > 0; z--) {
-            if (z > 4 && x[0] == x[z] && y[0] == y[z]) {
+        for (int z = 4; z < dots; z++) {
+            if (x[0] == x[z] && y[0] == y[z]) {
                 return true;
             }
         }
