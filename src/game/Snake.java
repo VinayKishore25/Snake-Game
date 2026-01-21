@@ -26,7 +26,7 @@ public class Snake {
     }
 
     public void move(boolean leftDirection, boolean rightDirection, boolean upDirection, boolean downDirection) {
-        for (int z = dots; z > 0; z--) {
+        for (int z = dots - 1; z > 0; z--) {
             x[z] = x[z - 1];
             y[z] = y[z - 1];
         }
@@ -43,7 +43,7 @@ public class Snake {
     }
 
     public boolean checkCollision(int boardWidth, int boardHeight) {
-        for (int z = dots; z > 0; z--) {
+        for (int z = dots - 1; z > 0; z--) {
             if (z > 4 && x[0] == x[z] && y[0] == y[z]) {
                 return true;
             }
